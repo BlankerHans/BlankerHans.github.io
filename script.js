@@ -1,23 +1,20 @@
 // JavaScript functionality for the website
 
-// Function to handle navigation scroll
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    window.scrollTo({
-        top: section.offsetTop,
-        behavior: 'smooth'
-    });
-}
+// JavaScript functionality for Dark Mode / Light Mode
 
-// Event listener for navigation links
 document.addEventListener('DOMContentLoaded', function () {
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const darkModeBtn = document.getElementById('darkModeBtn');
+    const lightModeBtn = document.getElementById('lightModeBtn');
+    const body = document.body;
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const sectionId = this.getAttribute('href').substring(1);
-            scrollToSection(sectionId);
-        });
+    // Event listener for Dark Mode button
+    darkModeBtn.addEventListener('click', function () {
+        body.classList.add('dark-mode');
+    });
+
+    // Event listener for Light Mode button
+    lightModeBtn.addEventListener('click', function () {
+        body.classList.remove('dark-mode');
     });
 });
+
