@@ -1,21 +1,20 @@
-body {
+html {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     transition: background-color 0.5s, color 0.5s;
 }
 
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
+body {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 header, nav, section, footer {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #333;
+    background-color: inherit;
+    color: inherit;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 nav ul {
@@ -31,14 +30,7 @@ nav ul li {
 
 a {
     text-decoration: none;
-    color: #333;
-}
-
-footer {
-    margin-top: 20px;
-    text-align: center;
-    background-color: #f5f5f5;
-    color: #333;
+    color: inherit;
 }
 
 #modeToggle {
@@ -56,4 +48,21 @@ footer {
 
 #darkModeBtn:hover, #lightModeBtn:hover {
     background-color: #555;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+html.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+html.dark-mode header, html.dark-mode nav, html.dark-mode section, html.dark-mode footer {
+    background-color: #444;
+    color: #fff;
 }
